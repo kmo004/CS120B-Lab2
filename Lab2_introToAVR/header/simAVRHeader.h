@@ -5,7 +5,7 @@
 #endif
 
 #include <avr/sleep.h>
-#include "simavr/sim/avr/avr_mcu_section.h"
+#include "avr_mcu_section.h"
 AVR_MCU(F_CPU,"atmega1284");
 AVR_MCU_VCD_FILE("build/results/Lab2_introToAVR_trace.vcd",1000);
 

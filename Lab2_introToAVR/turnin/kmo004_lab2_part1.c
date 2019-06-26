@@ -11,7 +11,7 @@
  #ifdef _SIMULATE_
  #include "simAVRHeader.h"
  #endif
-/*
+ 
 int main(void){
 DDRA = 0x00; PORTA = 0xFF;
 DDRB = 0xFF; PORTB = 0x00;
@@ -34,41 +34,6 @@ DDRB = 0xFF; PORTB = 0x00;
 	}
 return 0;
 }
-*/
-#include <avr/io.h>
-
-int main(void){
-DDRA = 0x00; PORTA = 0xFF;
-DDRC = 0xFF; PORTC = 0x00;
-
-unsigned char cntavail = 0x00;
-unsigned char park1= 0x00;
-unsigned char park2= 0x00;
-unsigned char park3= 0x00;
-unsigned char park4= 0x00;
-
-while(1){
-
-park1 = PINA & 0x01;
-park2 = PINA & 0x02;
-park3 = PINA & 0x03;
-park4 = PINA & 0x04;
 
 
-if((park1 || 0x00) != 0){
-cntavail = cntavail + 0x01;
-}
-if((park2 || 0x00) != 0){
-cntavail = cntavail + 0x01;
-}
-if((park3 || 0x00) != 0){
-cntavail = cntavail + 0x01;
-}
-if((park4 || 0x00) != 0){
-cntavail = cntavail + 0x01;
-}
-
-return 0;
-}
-}
 
