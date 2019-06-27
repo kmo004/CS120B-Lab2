@@ -59,7 +59,7 @@ int main(void){
 		if((parkSpace & 0x04) != 0){
 			++cntavail;
 		}
-		PORTC = cntavail;
+		PORTC = 0x04 - cntavail;
 	}
 	return 0;
 }
