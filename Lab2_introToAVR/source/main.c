@@ -20,19 +20,20 @@ int main(void) {
 	
     while (1) {
 		if(PINA & 0x01) {
-			cntavail++;
+			++cntavail;
 		} 
 		if(PINA & 0x02) {
-			cntavail++;
+			++cntavail;
 		}
 		if(PINA & 0x04) {
-			cntavail++;
+			++cntavail;
 		}
 		if(PINA & 0x08) {
-			cntavail++;
+			++cntavail;
 		}
+	    
 		PORTC = 4 - cntavail;
 		cntavail = 0;
     }
-    return 0;
+return 1;
 }
