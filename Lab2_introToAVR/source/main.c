@@ -43,20 +43,19 @@ int main(void){
 	unsigned char parkSpace= 0x00;
 
 	while(1){
-
+		
 		parkSpace = PINA & 0x01;
 
-
-		if((parkSpace & 0x01) != 0){
+		if(!(parkSpace & 0x01)){
 			++cntavail;
 		}
-		if((parkSpace & 0x02) != 0){
+		if(!(parkSpace & 0x02)){
 			++cntavail;
 		}
-		if((parkSpace & 0x03) != 0){
+		if(!(parkSpace & 0x04)){
 			++cntavail;
 		}
-		if((parkSpace & 0x04) != 0){
+		if(!(parkSpace & 0x08)){
 			++cntavail;
 		}
 		PORTC = 0x04 - cntavail;
