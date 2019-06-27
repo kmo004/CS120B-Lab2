@@ -65,6 +65,7 @@ while(1){
 	if((park4 || 0x00) != 0){
 		++cntavail;
 	}
+	PORTC = cntavail;
 
 	return 0;
 }
