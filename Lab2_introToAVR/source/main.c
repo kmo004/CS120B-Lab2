@@ -46,19 +46,20 @@ int main(void){
 		
 		parkSpace = PINA;
 
-		if(!(parkSpace & 0x01)){
+		if((parkSpace & 0x01)){
 			++cntavail;
 		}
-		if(!(parkSpace & 0x02)){
+		if((parkSpace & 0x02)){
 			++cntavail;
 		}
-		if(!(parkSpace & 0x04)){
+		if((parkSpace & 0x04)){
 			++cntavail;
 		}
-		if(!(parkSpace & 0x08)){
+		if((parkSpace & 0x08)){
 			++cntavail;
 		}
 		PORTC = 0x04 - cntavail;
+		cntavail = 0;
 	}
 	return 0;
 }
