@@ -44,7 +44,7 @@ int main(void){
 
 	while(1){
 		
-		parkSpace = PINA & 0x01;
+		parkSpace = PINA;
 
 		if(!(parkSpace & 0x01)){
 			++cntavail;
