@@ -16,7 +16,7 @@ int main(void) {
     DDRA = 0x00; PORTA = 0xFF;
     DDRC = 0xFF; PORTC = 0x00;
 	
-    unsigned char cntavail;
+    unsigned char cntavail = 0x00;
 	
     while (1) {
 		if(PINA & 0x01) {
