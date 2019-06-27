@@ -36,37 +36,30 @@ return 0;
 */
 
 int main(void){
-DDRA = 0x00; PORTA = 0xFF;
-DDRC = 0xFF; PORTC = 0x00;
+	DDRA = 0x00; PORTA = 0xFF;
+	DDRC = 0xFF; PORTC = 0x00;
 
-unsigned char cntavail = 0x00;
-unsigned char park1= 0x00;
-unsigned char park2= 0x00;
-unsigned char park3= 0x00;
-unsigned char park4= 0x00;
+	unsigned char cntavail = 0x00;
+	unsigned char parkSpace= 0x00;
 
-while(1){
+	while(1){
 
-	park1 = PINA & 0x01;
-	park2 = PINA & 0x02;
-	park3 = PINA & 0x03;
-	park4 = PINA & 0x04;
+		parkSpace = PINA & 0x01;
 
 
-	if((park1 || 0x00) != 0){
-		++cntavail;
+		if((parkSpace & 0x01) != 0){
+			++cntavail;
+		}
+		if((parkSpace & 0x02) != 0){
+			++cntavail;
+		}
+		if((parkSpace & 0x03) != 0){
+			++cntavail;
+		}
+		if((parkSpace & 0x04) != 0){
+			++cntavail;
+		}
+		PORTC = cntavail;
 	}
-	if((park2 || 0x00) != 0){
-		++cntavail;
-	}
-	if((park3 || 0x00) != 0){
-		++cntavail;
-	}
-	if((park4 || 0x00) != 0){
-		++cntavail;
-	}
-	PORTC = cntavail;
-
 	return 0;
-}
 }
