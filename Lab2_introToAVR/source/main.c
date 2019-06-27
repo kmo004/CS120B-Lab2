@@ -12,13 +12,13 @@
  #include "simAVRHeader.h"
  #endif
 
-int main(void){
-	DDRA = 0x00; PORTA = 0xFF;
-	DDRC = 0xFF; PORTC = 0x00;
-
-	unsigned char cntavail = 0x00;
-
-	while(1){
+int main(void) {
+    DDRA = 0x00; PORTA = 0xFF;
+    DDRC = 0xFF; PORTC = 0x00;
+	
+    unsigned char cntavail;
+	
+    while (1) {
 		if(PINA & 0x01) {
 			cntavail++;
 		} 
@@ -33,6 +33,6 @@ int main(void){
 		}
 		PORTC = 4 - cntavail;
 		cntavail = 0;
-	}
-	return 0;
+    }
+    return 0;
 }
